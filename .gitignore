@@ -1,0 +1,8 @@
+# NodeJS libraries
+node_modules
+
+# Environment variables
+.env
+
+# OS Generated files
+.DS_Store
