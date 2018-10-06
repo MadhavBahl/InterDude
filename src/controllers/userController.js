@@ -69,3 +69,6 @@ exports.login = (req, res) => {
 }
 
 // GET request to update the rating of the user
+exports.updateRating = (req, res) => {
+	// TODO update rating based on username
+}
