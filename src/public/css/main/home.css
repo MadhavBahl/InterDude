@@ -35,3 +35,9 @@ h1,h2,h3,h4,h5,h6,p {
 .noPad {
     padding: 0 !important;
 }
+
+.mainScreen {
+    margin-top: 80px;
+    height: 700px;
+
+}
