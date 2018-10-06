@@ -11,10 +11,13 @@ router.get('/', (req, res) => {
 router.post('/add', (req, res) => {
 	questionnaireController.addQuestionnaire(req, res)
 		.then(info => res.status(info.code).json(info))
-		.catch(err => {
-			console.log(err);
-			res.status(err.code).json(err)
-		});
+		.catch(err => res.status(err.code).json(err));
+});
+
+router.post('/grade', (req, res) => {
+	questionnaireController.gradeQuestionnare(req, res)
+		.then(info => res.status(info.code).json(info))
+		.catch(err => res.status(err.code).json(err));
 });
 
 module.exports = router;

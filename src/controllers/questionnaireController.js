@@ -38,6 +38,24 @@ exports.addQuestionnaire = (req, res) => {
 // POST request to grade the questionnaire
 exports.gradeQuestionnare = (req, res) => {
 	return new Promise((resolve, reject) => {
-		
+		if(!req.body.id) {
+			reject(response(400, "ID not provided", new Error("ID not provided")));
+		} else if (!req.body.mark1 || !req.body.mark2 || !req.body.mark3 || !req.body.mark4 || !req.body.mark5) {
+			reject(response(400, "One or more of the marks are missing", new Error("One or more of the marks are missing")));
+		} else {
+			Questionnaire.findByIdAndUpdate(req.body.id, {
+				marks1: parseInt(req.body.mark1),
+				marks2: parseInt(req.body.mark2),
+				marks3: parseInt(req.body.mark3),
+				marks4: parseInt(req.body.mark4),
+				marks5: parseInt(req.body.mark5),
+				graded: true
+			}, {
+				new: true
+			})
+			.exec()
+			.then(updatedQuestionnaire => resolve(response(200, "Successfully graded questionnaire", updatedQuestionnaire)))
+			.catch(err => reject(response(400, "Something went wrong!", err)));
+		}
 	});
 }
