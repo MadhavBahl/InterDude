@@ -1,7 +1,7 @@
 const config = {
 	enableCors: true,
 	port: process.env.PORT || 8000,
-	db_url: 'mongodb://127.0.0.1:27017/interdude',
+	db_url: 'mongodb://admin:interdude1@ds217002.mlab.com:17002/interdude',
 	saltRounds: 10
 }
 
