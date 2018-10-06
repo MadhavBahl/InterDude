@@ -41,6 +41,8 @@ app.use('/test', routes.test);
 
 app.use('/api/users', routes.userRoutes);
 
+app.use('/api/questionnaire', routes.questionnaireRoutes);
+
 util.db(() => {
 	
 });

@@ -2,6 +2,9 @@ const router = require('express').Router();
 
 const userController = require('../controllers/index').userController;
 
+
+// TODO write auth middleware
+
 // get all users
 router.get('/', (req, res) => {
 	userController.allUsers(req, res)
@@ -25,4 +28,8 @@ router.post('/login', (req, res) => {
 	// TODO add login controller
 });
 
+// secure this route
+router.get('/update-rating', (req, res) => {
+	// TODO update ratings
+});
 module.exports = router;
