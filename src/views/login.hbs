@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>InterDude | login</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" href="/css/main/fonts.css">
+    <link rel="stylesheet" href="/css/main/login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h1 class="mainTitle">INTER<span class="boldMainTitle">DUDE</span> </h1>
+                <p class="mainInfo">PREPARE FOR THE SUPERDREAM PACKAGE</p>
+            </div>
+        </div>
+
+        <div class="containerForm">
+            <form action="/login" method="post">
+                <div class="row">
+                    <div class="col s10 offset-s1 m4 offset-m4">
+                        <div class="row">
+                            <h3>Login</h3>
+                            <p>Enter Your Credentials</p>
+                            <br>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12 noPad">
+                                <input placeholder="" name="name" id="name" type="text" class="validate">
+                                <label class="ipLabel" for="name">Name</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12 noPad">
+                                <input placeholder="" name="password" id="password" type="text" class="validate">
+                                <label class="ipLabel" for="password">Password</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s6 valign-wrapper" style="padding: 0;">
+                                <button type="submit" class="waves-effect waves-light btn grey darken-3">Submit</button>
+                            </div>
+
+                            <div class="col s6 right-align " style=" padding: 0; margin-top: 6px;">
+                                <a href="/test/signup" style="color: #0a0a0a;"><p style="font-weight: bold;">Don't have an accunt?</p></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
