@@ -39,6 +39,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/test', routes.test);
 
+app.use('/api/users', routes.userRoutes);
+
+util.db(() => {
+	
+});
+
 app.listen(config.port, () => {
 	console.log('Server running at port', config.port);
 });
