@@ -2,6 +2,7 @@ const router = require('express').Router();
 
 const userController = require('../controllers/index').userController;
 
+
 // TODO write auth middleware
 
 // get all users
@@ -31,5 +32,4 @@ router.post('/login', (req, res) => {
 router.get('/update-rating', (req, res) => {
 	// TODO update ratings
 });
-
 module.exports = router;

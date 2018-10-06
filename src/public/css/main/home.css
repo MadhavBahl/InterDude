@@ -1,0 +1,43 @@
+* {
+    font-family: "San Francisco";
+}
+
+html {
+    font-family: "San Francisco";
+}
+
+body {
+    font-family: "San Francisco";
+}
+
+.container {
+    width: 95%;
+    margin: 2.5%;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+}
+
+.mainTitle {
+    font-weight: 100;
+    font-size: 52px;
+}
+
+.boldMainTitle {
+    font-weight: 600;
+}
+
+.containerForm {
+    margin: 50px;
+}
+
+.noPad {
+    padding: 0 !important;
+}
+
+.mainScreen {
+    margin-top: 80px;
+    height: 700px;
+
+}
