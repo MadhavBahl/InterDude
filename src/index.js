@@ -37,7 +37,7 @@ if(config.enableCors) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/', routes.test);
+app.use('/test', routes.test);
 
 app.listen(config.port, () => {
 	console.log('Server running at port', config.port);
