@@ -1,0 +1,58 @@
+* {
+    font-family: "San Francisco";
+}
+
+html {
+    font-family: "San Francisco";
+}
+
+body {
+    font-family: "San Francisco";
+}
+
+.container {
+    width: 95%;
+    margin: 2.5%;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+}
+
+.mainTitle {
+    font-weight: 100;
+    font-size: 52px;
+}
+
+.boldMainTitle {
+    font-weight: 600;
+}
+
+.containerForm {
+    margin: 50px;
+}
+
+.noPad {
+    padding: 0 !important;
+}
+
+input {
+    border-style: solid !important;
+    border-width: 1px 1px 1px 1px !important;
+    border-color: #979797 !important;
+}
+
+label {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+.ipLabel {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    font-size: 20px !important;
+    margin-top: -10px !important;
+    margin-left: -12px !important;
+}
