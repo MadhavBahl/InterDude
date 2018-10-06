@@ -12,4 +12,12 @@ router.get ('/signup', (req, res) => {
 	res.render('signup.hbs');
 })
 
+router.get ('/home', (req, res) => {
+	res.render('home.hbs');
+})
+
+router.get ('/inter', (req, res) => {
+	res.render('interview.hbs');
+})
+
 module.exports = router;

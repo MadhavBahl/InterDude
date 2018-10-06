@@ -1,8 +1,11 @@
 # NodeJS libraries
-node_modules
+node_modules/
 
 # Environment variables
 .env
 
 # OS Generated files
 .DS_Store
+
+# Agora Boilerplate
+sid/
