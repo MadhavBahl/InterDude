@@ -14,7 +14,7 @@ exports.getQuestionnaire = (req, res) => {
 		Questionnaire.findOne({graded: false}, '-marks1 -marks2 -marks3 -marks4 -marks5 -graded')
 			.exec()
 			.then(questionnaire => resolve(response(200, 'Questionnaire found', questionnaire)))
-			.catch(err => reject(response(400, 'An error occured in finding th questionnaire', err)));
+			.catch(err => reject(response(400, 'An error occured in finding the questionnaire', err)));
 	});
 }
 
