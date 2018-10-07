@@ -29,6 +29,7 @@ io.on('connection', function(socket){
 
 	socket.on('update', msg => {
 		console.log(msg);
+		io.emit('nextQues', msg);
 	});
 });
 
