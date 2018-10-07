@@ -12,6 +12,9 @@
   "license": "MIT",
   "devDependencies": {
     "nodemon": "^1.18.4"
+  }, 
+  "engines": {
+    "node": "9.2.0"
   },
   "dependencies": {
     "bcrypt": "^3.0.1",
