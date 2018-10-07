@@ -62,13 +62,30 @@ h1,h2,h3,h4,h5,h6,p {
     background: #fff;
     border-radius: 2px;
     display: inline-block;
-    height: 300px;
+    /* height: 300px; */
     margin: 1rem;
     position: relative;
     width: 100%;
-    padding: 0;
+    padding: 20px;
 }
 
 .card-2 {
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.greentext {
+    color: #4aaa05
+}
+
+/* grey: #d8d8d8 */
+/* light grey: #f4f4f4 */
+
+.itemOdd {
+    background-color: #d8d8d8 !important;
+    color: #0a0a0a !important;
+}
+
+.itemEven {
+    background-color: #f4f4f4 !important;
+    color: #0a0a0a !important;
 }

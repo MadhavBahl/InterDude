@@ -61,7 +61,7 @@
 
 						<div class="right-align" style="text-align: right !important;">
 							<div class="txt" style="text-align: right !important; align-items: right;">
-								<p style="text-align: right !important; padding-left: 10px;"><b>Ansh Mehra</b></p>       
+								<p style="text-align: right !important; padding-left: 10px;"><b>Madhav Bahl</b></p>       
 							</div>
 						</div>
                         
@@ -82,13 +82,13 @@
 			<div class="col s6">
 				<div class="quesTile" style="position: relative;">
 					<p id="questionNum" style="color: #9f9f9f;"><b>Question <span id="countQues"></span> out of 5</b> </p>
-					<h3 id="questionName"></h3>
+					<h4 id="questionName"></h4>
 
 					<div class="bottomPlace" style="position: absolute; bottom: 0;">
-						<div class="input-field col s12" style="padding: 0;">
+						{{!-- <div class="input-field col s12" style="padding: 0;">
 							<input id="marks" name="marks" type="hidden" class="validate">
 							<label for="marks">Marks</label>
-						</div>
+						</div> --}}
 
 						<button type="submit" class="waves-effect waves-light btn " style="background-color: #dd5353; width: 100%;" disabled id="leave">LEAVE INTERVIEW</button>
 					</div>
@@ -98,14 +98,47 @@
 					
 				</div>
 			</div>
-		</div>
 
-		<div class="row">
+			<div class="row">
 			{{!-- <h4>TIME REMAINING</h>
 			<h2 class="timeNow">09:56</h2> --}}
 
-			<button type="submit" onclick="join()" class="waves-effect waves-light btn grey darken-3" id="beginInter">BEGIN VIDEO CALL</button>
+			<button type="submit" onclick="join()" class="waves-effect waves-light btn grey darken-3" style="margin-top: 20px;" id="beginInter">BEGIN VIDEO CALL</button>
 		</div>
+		</div>
+
+<div class="row resultWindow" style="display: none;">
+			<div class="row">
+				<div class="col offset-s2 s8" style="margin-top: 32px;">
+					<div class="card card-2 hoverable">
+						<div class="row">
+							<div class="col s6 left-align">
+								
+								<br><a href="/" style="color: #0a0a0a;"><b>GO BACK</b></a>
+							</div>
+
+							<div class="col s6 right-align greentext">
+								<h4 style="margin-top: 10px;"><span class="totMarks"></span> out of 50</h4>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col offset-s2 s8 "> <br>
+								<div class="collection addResults">
+									
+									
+									
+								</div>
+							</div>
+						</div>
+					</div>
+
+						
+				</div>
+			</div>
+
+		</div>
+		
     </div>
 
 	

@@ -1,5 +1,7 @@
 var questionCounter = 1;
 var maxQuestion = 5;
+var totalMarks = 0;
+
 $(document).ready(function () {
     $.get("/api/questionnaire", function(data, status) {
         var marks = {
@@ -30,6 +32,7 @@ $(document).ready(function () {
             let currentMark = 0;
             currentMark = $('#marks').val();
             marks['mark' + questionCounter] = currentMark;
+            totalMarks += parseInt(currentMark);
             console.log('current MARK: ', currentMark);
             $('#marks').val('0');
             questionCounter++;
@@ -49,18 +52,25 @@ $(document).ready(function () {
                 console.log('final MARK: ', marks);
             }
 
-            if (questionCounter > 5) {
-
-            }
-
-
         });
+
+        socket.on('sendFinal', function (result) {
+             $('.mainScreen').css({"display": "none"});
+                    $('.resultWindow').css({"display": "block"});
+                        $('.totMarks').html(result.totalMarks);
+                        $('.addResults').append(`<a href="#!" class="collection-item itemOdd"><span class="right-align" style="float: right;"><b>${result.obj.marks1}/10</b></span>Question 1</a>
+    <a href="#!" class="collection-item itemEven"><span class="right-align" style="float: right;"><b>${result.obj.marks2}/10</b></span>Question 2</a>
+    <a href="#!" class="collection-item itemOdd"><span class="right-align" style="float: right;"><b>${result.obj.marks3}/10</b></span>Question 3</a>
+    <a href="#!" class="collection-item itemEven"><span class="right-align" style="float: right;"><b>${result.obj.marks4}/10</b></span>Question 4</a>
+    <a href="#!" class="collection-item itemOdd"><span class="right-align" style="float: right;"><b>${result.obj.marks5}/10</b></span>Question 5</a>`);
+                    });
 
         $('#submitQuiz').click(function () {
             console.log('FINAL SUBMIT!');
             console.log(marks);
             let currentMark = 0;
             currentMark = $('#marks').val();
+            totalMarks += parseInt(currentMark);
             marks['mark' + questionCounter] = currentMark;
             console.log('current MARK: ', currentMark);
 
@@ -69,10 +79,22 @@ $(document).ready(function () {
                 marks,
                 function(data) {
                     console.log('FINAL RESPONSE: ', data);
+
+                   
+
+                    let quesNum = 1;
+
+                    data.totalMarks = totalMarks;
+
+                    socket.emit('finalResult', data);
+
+                    
+
                 }
                ); 
         });
 
     });
 });
+
 

@@ -33,6 +33,11 @@ io.on('connection', function(socket){
 		console.log(msg);
 		io.emit('nextQues', msg);
 	});
+
+	socket.on('finalResult', data => {
+		console.log(data);
+		io.emit('sendFinal', data);
+	})
 });
 
 // socket part ends
