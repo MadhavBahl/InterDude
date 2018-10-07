@@ -874,11 +874,16 @@
 /*********************************************************************************/
 
 	#one {
-		/* background: url('images/overlay.png'), url('../images/one.jpg'); */
+		/* background: rgba(0, 0, 0, 1), url('images/fulls/01.jpg');
 		background-color: white;
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
-		background-position: top left, center center;
+		background-position: top left, center center; */
+		background: url('../images/fulls/01.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	}
 
 /*********************************************************************************/
@@ -887,10 +892,15 @@
 
 	#two {
 		/* background: url('images/overlay.png'), url('../images/two.jpg'); */
-		background-color: white;
+		/* background-color: white;
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
-		background-position: top left, center center;
+		background-position: top left, center center; */
+		background: url('../images/fulls/03.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	}
 
 /*********************************************************************************/
