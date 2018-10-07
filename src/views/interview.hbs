@@ -73,15 +73,38 @@
         </div>
 
 		<div class="row mainScreen">
-			<div class="col s6">
+			<div class="col s6" style="background-color: #373737; min-height: 450px;">
 				<div id="video" style="margin:0 auto;">
-					<div id="agora_local" style="float:right;width:180px;height:147px;display:inline-block;"></div>
+					<div id="agora_local" style="float:right;width:180px;height:150px;display:inline-block; z-index: 999;"></div>
 				</div>
 			</div>	
 
 			<div class="col s6">
-			
+				<div class="quesTile" style="position: relative;">
+					<p style="color: #9f9f9f;"><b>Question 1 out of 5</b> </p>
+					<h3>What is your name?</h3>
+
+					<div class="bottomPlace" style="position: absolute; bottom: 0;">
+						<div class="input-field col s12" style="padding: 0;">
+							<input id="marks" name="marks" type="text" class="validate">
+							<label for="marks">Marks</label>
+						</div>
+
+						<button type="submit" onclick="join()" class="waves-effect waves-light btn " style="background-color: #dd5353; width: 100%;" id="beginInter">GO TO NEXT QUESTION</button>
+					</div>
+				</div>
+
+				<div class="answerTile" style="">
+					
+				</div>
 			</div>
+		</div>
+
+		<div class="row">
+			{{!-- <h4>TIME REMAINING</h>
+			<h2 class="timeNow">09:56</h2> --}}
+
+			<button type="submit" onclick="join()" class="waves-effect waves-light btn grey darken-3" id="beginInter">Begin Interview</button>
 		</div>
     </div>
 
@@ -112,6 +135,7 @@
 		var videoSelect = document.querySelector('select#videoSource');
 
 		function join() {
+			document.getElementById('beginInter').style.display = 'none';
 		document.getElementById("join").disabled = true;
 		//document.getElementById("video").disabled = true;
 		var channel_key = null;
@@ -190,7 +214,7 @@
 			var stream = evt.stream;
 			console.log("Subscribe remote stream successfully: " + stream.getId());
 			if ($('div#video #agora_remote'+stream.getId()).length === 0) {
-			$('div#video').append('<div class="agora_remote" id="agora_remote'+stream.getId()+'" style="float:left; width:810px;height:607px;display:inline-block;"></div>');
+			$('div#video').append('<div class="agora_remote" id="agora_remote'+stream.getId()+'" style="float:left; width:100%;height:450px; margin-top: -150px; display:inline-block;"></div>');
 			}
 			stream.play('agora_remote' + stream.getId());
 		});
