@@ -3,6 +3,11 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const hbs = require('hbs');
 
+const app = express();
+
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+
 const dotenv = require('dotenv');
 
 // Load local environment variables
@@ -14,7 +19,21 @@ const config = require('./config');
 
 const util = require('./util/index');
 
-const app = express();
+// socket part
+
+io.on('connection', function(socket){
+	console.log('a new connected');
+	socket.on('disconnect', function(){
+	  console.log('user disconnected');
+	});
+
+	socket.on('update', msg => {
+		console.log(msg);
+	});
+});
+
+// socket part ends
+
 app.set('view engine', 'hbs');
 app.set('views', path.normalize(__dirname + '/views'));
 
@@ -43,11 +62,19 @@ app.use('/api/users', routes.userRoutes);
 app.use('/api/questionnaire', routes.questionnaireRoutes);
 app.use('/api/interview', routes.interviewRoutes);
 
+// socket
+app.get('/socket', (req, res) => {
+	io.emit('update', {
+		counter: 1
+	});
+	res.end('Emitted');
+});
+
 util.db(() => {
 	
 });
 
-app.listen(config.port, () => {
+http.listen(config.port, () => {
 	console.log('Server running at port', config.port);
 });
 
