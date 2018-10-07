@@ -20,4 +20,8 @@ router.get ('/inter', (req, res) => {
 	res.render('interview.hbs');
 })
 
+router.get ('/client', (req, res) => {
+	res.render('client.hbs');
+})
+
 module.exports = router;

@@ -59,7 +59,7 @@ if(config.enableCors) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/test', routes.test);
+app.use('/', routes.test);
 
 app.use('/api/users', routes.userRoutes);
 app.use('/api/questionnaire', routes.questionnaireRoutes);
