@@ -27,6 +27,8 @@ io.on('connection', function(socket){
 	  console.log('user disconnected');
 	});
 
+	io.emit('nextQues', 1);
+
 	socket.on('update', msg => {
 		console.log(msg);
 		io.emit('nextQues', msg);
